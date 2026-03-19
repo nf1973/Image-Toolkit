@@ -89,7 +89,7 @@ class ImageResizerApp(QWidget):
         do_resize = self.resize_toggle.isChecked()
         scrub = self.exif_checkbox.isChecked()
         use_zip = self.zip_checkbox.isChecked()
-        output_dir = os.path.join(os.path.expanduser("~"), "ImageToolkit")
+        output_dir = os.path.join(os.path.expanduser("~/Desktop"), "ImageToolkit")
         os.makedirs(output_dir, exist_ok=True)
 
         try:
