@@ -92,11 +92,23 @@ pip install pyinstaller
 
 ### Generate the Bundle
 
+#### macOS
+
 ```bash
 pyinstaller --noconsole --onedir --windowed --name "ImageToolkit" --icon=images/ImageToolkit.icns main.py
 ```
 
-Find your finished application in the `dist/` folder.
+After building, find your application in the `dist/` folder as `ImageToolkit.app`.
+
+---
+
+#### Windows
+
+```bash
+pyinstaller --noconsole --onedir --windowed --name "ImageToolkit" --icon=images/ImageToolkit.ico main.py
+```
+
+After building, find your application in the `dist/` folder as `ImageToolkit.exe`.
 
 ---
 
