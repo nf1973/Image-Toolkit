@@ -1,0 +1,49 @@
+# --- Application Specific ---
+# Exclude the app's generated images/archives
+output/
+
+# --- Python Environment & Dependencies ---
+# Virtual Environments (Standard)
+venv/
+.venv/
+env/
+.env/
+
+# Pipenv
+Pipfile
+Pipfile.lock
+.venv/
+
+# Poetry
+dist/
+
+# --- macOS Specific ---
+# Ignore system files created by Finder
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon?
+._*
+
+# --- IDE & Editors ---
+# Visual Studio Code
+.vscode/
+*.code-workspace
+
+# PyCharm / IntelliJ
+.idea/
+
+# --- Build & Packaging (PyInstaller/Py2App) ---
+# Files created when turning the script into a .app or .exe
+build/
+dist/
+*.spec
+*.pyc
+__pycache__/
+*.so
+
+# --- Testing ---
+.pytest_cache/
+nosetests.xml
+coverage.xml
+htmlcov/
