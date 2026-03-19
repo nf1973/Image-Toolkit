@@ -2,6 +2,13 @@ import sys
 import io
 import zipfile
 import os
+
+# Determine the base path depending on whether the app is frozen by PyInstaller
+if getattr(sys, "frozen", False):
+    BASE_PATH = sys._MEIPASS  # PyInstaller temporary folder
+else:
+    BASE_PATH = os.path.abspath(".")
+
 from datetime import datetime
 from PIL import Image, ImageOps
 from PySide6.QtWidgets import (
@@ -82,7 +89,7 @@ class ImageResizerApp(QWidget):
         do_resize = self.resize_toggle.isChecked()
         scrub = self.exif_checkbox.isChecked()
         use_zip = self.zip_checkbox.isChecked()
-        output_dir = os.path.join(os.getcwd(), "output")
+        output_dir = os.path.join(os.path.expanduser("~"), "ImageToolkit")
         os.makedirs(output_dir, exist_ok=True)
 
         try:
