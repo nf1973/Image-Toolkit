@@ -93,7 +93,7 @@ pip install pyinstaller
 ### Generate the Bundle
 
 ```bash
-pyinstaller --noconsole --onefile --windowed --name "ImageToolkit" main.py
+pyinstaller --noconsole --onedir --windowed --name "ImageToolkit" main.py
 ```
 
 Find your finished application in the `dist/` folder.
