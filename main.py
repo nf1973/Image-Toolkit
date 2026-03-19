@@ -2,6 +2,7 @@ import sys
 import io
 import zipfile
 import os
+import subprocess
 
 # Determine the base path depending on whether the app is frozen by PyInstaller
 if getattr(sys, "frozen", False):
@@ -125,6 +126,8 @@ class ImageResizerApp(QWidget):
 
             QMessageBox.information(self, "Success", f"Processed {len(self.files)} images!")
             self.files = []; self.update_ui_state()
+            subprocess.run(["open", output_dir])
+
         except Exception as e:
             QMessageBox.critical(self, "Error", str(e))
 
